@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3bb8299987.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="loopArray.css">
+</head>
+<body>
+<section>
+  <h1>GUESSING GAME</h1>
+    <div>
+      <span>Choose your difficulty and enjoy:</span>
+      <select name="mode" id="mode">
+        <option value="hard">hard</option>
+        <option value="medium">medium</option>
+        <option value="easy">easy</option>
+      </select>
+      <button type="button" class="btn btn-primary" onclick="pick(), reset()">Play or Play again</button>
+    
+    </div>
+    <p>Enter your number here:</p>
+<input type="text" id="guess-input" onfocus="this.value=''" placeholder="_">
+
+<button type="button" class="btn btn-success" id="enter" onclick="clickCount()">Press Enter or Click</button>
+    <p>Your remaining times: <span id="remaining-time"></span></p>
+
+<span>Your guessed number: </span><span id="history-list">??</span><br>
+<span>Our number is: </span><span id="computer-number">??</span>
+
+<div class="alert alert-warning alert-dismissible fade show" id="win" role="alert">
+    <strong>Holy moly!</strong> Are you a cheater ? Anw, congratulation!. 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <div class="alert alert-warning alert-dismissible fade show" id="high" role="alert">
+    <strong>See you later nerds!</strong> Your number is actually higher then us.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="alert alert-warning alert-dismissible fade show" id="low" role="alert">
+    <strong>See you later nerds!</strong> Your number is actually lower then us.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  </section>
+
+
+
+
+    <script type="text/javascript" src="loopArray.js"></script>
+</body>
+</html>
