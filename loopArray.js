@@ -34,9 +34,32 @@ let guessInput = document.getElementById("guess-input")
 guessInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
           clickCount()
+          
     }
 })
 
+for (let i = 0; i <= history.length; i++){
+    if (history[i] == guessInput){
+        document.getElementById("number-repeat").innerHTML = "You alr guessed this number"
+}}
+
+//Set time counting for the game
+let time = 10 // time start from 0
+let myTime; // timer will be assign to this variable
+function timecounting() {
+    myTime = setInterval(() => {
+        time -= 1
+        if (time == 0){
+            timeOut()
+       }//
+        document.getElementById('timecount').innerHTML = time
+    }, 1000)
+}
+
+function timeOut() {
+    clearInterval(myTime);
+  }
+// end of Set time counting
 function deleteinput()
    {  
    document.getElementById("guess-input").value = "";
@@ -86,13 +109,6 @@ function reset(){
     document.getElementById("win").style.display = "none"
     document.getElementById("low").style.display = "none"
     document.getElementById("high").style.display = "none"
+    time = 10
+    timecounting()
 }
-
-
-
-
-
-
-
-// limited time play
-// The user can restart the game by pressing a "start over" button or link.
